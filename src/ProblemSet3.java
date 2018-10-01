@@ -27,7 +27,21 @@ public class ProblemSet3 {
 	 */
 	
 	public static void main(String[] args) {
-			
+		ProblemSet3 ps3 = new ProblemSet3();
+		
+		ps3.dateFashion(8, 8);
+		
+		ps3.fizzString("fsample textb");
+		
+		ps3.squirrelPlay(91, false);
+		
+		for (int i = 0; i < 20; i++) ps3.fizzStringAgain(i + 1);
+		
+		ps3.makeBricks(5, 19, 100);
+		
+		ps3.loneSum(1, 2, 3);
+		ps3.loneSum(3, 2, 3);
+		ps3.loneSum(3, 3, 3);
 	}
 	
 	/*
@@ -47,7 +61,20 @@ public class ProblemSet3 {
 	 */
 	
 	public void dateFashion(int you, int date) {
+		if (you > 10 || you < 0 || date > 10 || date < 0) {
+			System.out.println("Outside of range 0-10");
+			return;
+		}
 		
+		if (you <= 2 || date <= 2) {
+			System.out.println("NO");
+		}
+		else if (you >= 8 || date >= 8) {
+			System.out.println("YES");
+		}
+		else {
+			System.out.println("MAYBE");
+		}
 	}
 	
 	/*
@@ -62,7 +89,18 @@ public class ProblemSet3 {
 	 */
 	
 	public void fizzString(String str) {
-		
+		if (Character.toLowerCase(str.charAt(0)) == 'f') {
+			System.out.print("FIZZ");
+		}
+		if (Character.toLowerCase(str.charAt(str.length() - 1)) == 'b') {
+			System.out.println("BUZZ");
+			return;
+		}
+		else if (Character.toLowerCase(str.charAt(0)) != 'f') {
+			System.out.println(str);
+			return;
+		}
+		System.out.println("");
 	}
 	
 	/*
@@ -78,7 +116,12 @@ public class ProblemSet3 {
 	 */
 	
 	public void squirrelPlay(int temp, boolean isSummer) {
-		
+		int upper = (isSummer) ? 100 : 90;
+		if (temp < upper && temp > 60) {
+			System.out.println("YES");
+			return;
+		}
+		System.out.println("NO");
 	}
 	
 	/*
@@ -93,7 +136,16 @@ public class ProblemSet3 {
 	 */
 	
 	public void fizzStringAgain(int n) {
-		
+		if (n % 3 == 0) {
+			System.out.print("FIZZ");
+		}
+		if (n % 5 == 0) {
+			System.out.print("BUZZ");
+		}
+		else if (n % 3 != 0) {
+			System.out.print(n);
+		}
+		System.out.println("!");
 	}
 	
 	/*
@@ -108,7 +160,15 @@ public class ProblemSet3 {
 	 */
 	
 	public void makeBricks(int small, int big, int goal) {
-		
+		while (goal >= 5 && big >= 1) {
+			big--;
+			goal -= 5;
+		}
+		while (goal >= 1 && small >= 1) {
+			big--;
+			goal -= 5;
+		}
+		System.out.println((goal == 0) ? "YES" : "NO");
 	}
 	
 	/*
@@ -121,6 +181,25 @@ public class ProblemSet3 {
 	 */
 	
 	public void loneSum(int a, int b, int c) {
+		if (a == b) {
+			if (b == c) {
+				System.out.println(0);
+				return;
+			}
+			else {
+				System.out.println(c);
+				return;
+			}
+		}
+		if (a == c) {
+			System.out.println(b);
+			return;
+		}
+		if (b == c) {
+			System.out.println(a);
+			return;
+		}
+		System.out.println(a + b + c);
 		
 	}
 	
