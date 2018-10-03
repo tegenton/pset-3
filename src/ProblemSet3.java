@@ -147,15 +147,17 @@ public class ProblemSet3 {
 	 */
 	
 	public void makeBricks(int small, int big, int goal) {
-		while (goal >= 5 && big >= 1) {
-			big--;
-			goal -= 5;
+		if (big >= goal / 5) {
+			big -= goal / 5;
+			goal %= 5;
 		}
-		while (goal >= 1 && small >= 1) {
-			big--;
-			goal -= 5;
+		else goal -= big * 5;
+		if (small >= goal) {
+			System.out.println("YES");
 		}
-		System.out.println((goal == 0) ? "YES" : "NO");
+		else {
+			System.out.println("NO");
+		}
 	}
 	
 	/*
