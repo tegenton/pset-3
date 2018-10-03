@@ -214,7 +214,14 @@ public class ProblemSet3 {
 	 */
 	
 	public void luckySum(int a, int b, int c) {
+		int[] input = {a, b, c};
+		int sum = 0;
 		
+		for (int i = 0; i < 3; i++) {
+			if (input[i] == 13) break;
+			sum += input[i];
+		}
+		System.out.println(sum);
 	}
 	
 	/*
