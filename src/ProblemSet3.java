@@ -28,22 +28,7 @@ public class ProblemSet3 {
 	
 	public static void main(String[] args) {
 		ProblemSet3 ps3 = new ProblemSet3();
-		
-		ps3.dateFashion(8, 8);
-		
-		ps3.fizzString("fsample textb");
-		
-		ps3.squirrelPlay(91, false);
-		
-		for (int i = 0; i < 20; i++) ps3.fizzStringAgain(i + 1);
-		
-		ps3.makeBricks(5, 19, 100);
-		
-		ps3.loneSum(1, 2, 3);
-		ps3.loneSum(3, 2, 3);
-		ps3.loneSum(3, 3, 3);
-		
-		ps3.factorialTester(3);
+		ps3.testFunctions();
 	}
 	
 	/*
@@ -260,17 +245,6 @@ public class ProblemSet3 {
 		System.out.println(sum);
 	}
 	
-	public void factorialTester (int n) {
-		/* Runs both for and while loop factorials on the given integer
-		 * Made for testing purposes
-		 */
-		System.out.print("For loop: ");
-		this.factorialFor(n);
-		System.out.print("While loop: ");
-		this.factorialWhile(n);
-		
-	}
-	
 	/*
 	 * Given an integer value, n, determine whether or not n is a prime number. Your method
 	 * should either print PRIME or NOT PRIME. Nothing more, nothing less.
@@ -281,6 +255,52 @@ public class ProblemSet3 {
 	 */
 	
 	public void isPrime(int n) {
+		
+	}
+	
+	/*
+	 * Test each function
+	 */
+	
+	public void testFunctions () {
+		
+		System.out.print("dateFashion:\nShould return yes:");
+		this.dateFashion(5, 10);
+		System.out.print("Should return no:");
+		this.dateFashion(5, 2);
+		System.out.print("Should return maybe:");
+		this.dateFashion(5, 5);
+		System.out.print("Should return no:");
+		this.dateFashion(8, 2);
+		
+		System.out.print("fizzString:\nShould return fizz:");
+		this.fizzString("fig");
+		System.out.print("Should return buzz:");
+		this.fizzString("dib");
+		System.out.print("Should return fizzbuzz:");
+		this.fizzString("fsample textb");
+		
+		System.out.print("squirrelPlay:\nShould return no:");
+		this.squirrelPlay(91, false);
+		
+		System.out.print("fizzStringAgain:\nShould return fizzbuzz up to 20:\n");
+		for (int i = 0; i < 20; i++) this.fizzStringAgain(i + 1);
+		
+		System.out.print("makeBricks:\nShould return yes:");
+		this.makeBricks(5, 19, 100);
+		
+		System.out.print("loneSum:\nShould return 6:");
+		this.loneSum(1, 2, 3);
+		System.out.print("Should return 2:");
+		this.loneSum(3, 2, 3);
+		System.out.print("Should return 0:");
+		this.loneSum(3, 3, 3);
+		
+		System.out.print("Factorial of 3:\nFor loop: ");
+		this.factorialFor(3);
+		System.out.print("While loop: ");
+		this.factorialWhile(3);
+		
 		
 	}
 }
