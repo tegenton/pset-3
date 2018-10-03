@@ -42,6 +42,8 @@ public class ProblemSet3 {
 		ps3.loneSum(1, 2, 3);
 		ps3.loneSum(3, 2, 3);
 		ps3.loneSum(3, 3, 3);
+		
+		ps3.factorialTester(3);
 	}
 	
 	/*
@@ -234,7 +236,9 @@ public class ProblemSet3 {
 	 */
 	
 	public void factorialFor(int n) {
-		
+		int sum = n;
+		for (int i = 1; i < n; i++) sum *= i;
+		System.out.println(sum);
 	}
 	
 	/*
@@ -248,6 +252,22 @@ public class ProblemSet3 {
 	 */
 	
 	public void factorialWhile(int n) {
+		int i = 0;
+		int sum = n;
+		while (++i < n) {
+			sum *= i;
+		}
+		System.out.println(sum);
+	}
+	
+	public void factorialTester (int n) {
+		/* Runs both for and while loop factorials on the given integer
+		 * Made for testing purposes
+		 */
+		System.out.print("For loop: ");
+		this.factorialFor(n);
+		System.out.print("While loop: ");
+		this.factorialWhile(n);
 		
 	}
 	
