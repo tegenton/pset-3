@@ -28,7 +28,7 @@ public class ProblemSet3 {
 	
 	public static void main(String[] args) {
 		ProblemSet3 ps3 = new ProblemSet3();
-		ps3.testFunctions();
+		ps3.testFunctions();		
 	}
 	
 	/*
@@ -255,7 +255,21 @@ public class ProblemSet3 {
 	 */
 	
 	public void isPrime(int n) {
-		
+		if (n < 2) {
+			System.out.println("NOT PRIME");
+			return;
+		} else if (n < 4) {
+			System.out.println("PRIME");
+			return;
+		}
+		int squareRoot = (int) Math.pow((double) n, 0.5);
+		for (int i = 2; i < squareRoot; i++) {
+			if (n % i == 0) {
+				System.out.println("NOT PRIME");
+				return;
+			}
+		}
+		System.out.println("PRIME");
 	}
 	
 	/*
@@ -273,34 +287,35 @@ public class ProblemSet3 {
 		System.out.print("Should return no:");
 		this.dateFashion(8, 2);
 		
-		System.out.print("fizzString:\nShould return fizz:");
+		System.out.print("\nfizzString:\nShould return fizz:");
 		this.fizzString("fig");
 		System.out.print("Should return buzz:");
 		this.fizzString("dib");
 		System.out.print("Should return fizzbuzz:");
 		this.fizzString("fsample textb");
 		
-		System.out.print("squirrelPlay:\nShould return no:");
+		System.out.print("\nsquirrelPlay:\nShould return no:");
 		this.squirrelPlay(91, false);
 		
-		System.out.print("fizzStringAgain:\nShould return fizzbuzz up to 20:\n");
+		System.out.print("\nfizzStringAgain:\nShould return fizzbuzz up to 20:\n");
 		for (int i = 0; i < 20; i++) this.fizzStringAgain(i + 1);
 		
-		System.out.print("makeBricks:\nShould return yes:");
+		System.out.print("\nmakeBricks:\nShould return yes:");
 		this.makeBricks(5, 19, 100);
 		
-		System.out.print("loneSum:\nShould return 6:");
+		System.out.print("\nloneSum:\nShould return 6: ");
 		this.loneSum(1, 2, 3);
-		System.out.print("Should return 2:");
+		System.out.print("Should return 2: ");
 		this.loneSum(3, 2, 3);
-		System.out.print("Should return 0:");
+		System.out.print("Should return 0: ");
 		this.loneSum(3, 3, 3);
 		
-		System.out.print("Factorial of 3:\nFor loop: ");
+		System.out.print("\nFactorial of 3:\nFor loop: ");
 		this.factorialFor(3);
 		System.out.print("While loop: ");
 		this.factorialWhile(3);
 		
-		
+		System.out.print("\nisPrime:\nShould return yes: ");
+		this.isPrime(3);
 	}
 }
