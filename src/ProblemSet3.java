@@ -302,8 +302,14 @@ public class ProblemSet3 {
 		System.out.print("\nfizzStringAgain:\nShould return fizzbuzz up to 20:\n");
 		for (int i = 0; i < 20; i++) this.fizzStringAgain(i + 1);
 		
-		System.out.print("\nmakeBricks:\nShould return yes:");
+		System.out.print("\nmakeBricks:\nShould return yes: ");
 		this.makeBricks(5, 19, 100);
+		System.out.print("Should return yes: ");
+		this.makeBricks(3, 1, 8);
+		System.out.print("Should return no: ");
+		this.makeBricks(3, 1, 9);
+		System.out.print("Should return yes: ");
+		this.makeBricks(3, 2, 10);
 		
 		System.out.print("\nloneSum:\nShould return 6: ");
 		this.loneSum(1, 2, 3);
