@@ -255,23 +255,16 @@ public class ProblemSet3 {
 	 * isPrime(112) → NO
 	 */
 	
-	public void isPrime(int n) {
-		if (n < 2) {
-			System.out.println("NOT PRIME");
-			return;
-		} else if (n < 4) {
-			System.out.println("PRIME");
-			return;
-		}
-		int squareRoot = (int) Math.pow((double) n, 0.5);
-		for (int i = 2; i < squareRoot; i++) {
-			if (n % i == 0) {
-				System.out.println("NOT PRIME");
-				return;
-			}
-		}
-		System.out.println("PRIME");
-	}
+	public void isPrime(int num) {
+        if (num < 2) System.out.println("NOT PRIME");
+        else if (num == 2) System.out.println("PRIME");
+        else if (num % 2 == 0) System.out.println("NOT PRIME");
+        else { 
+        	for (int i = 3; i * i <= num; i += 2)
+        		if (num % i == 0) System.out.println("NOT PRIME");
+        	System.out.println("PRIME");
+        }
+    }
 	
 	/*
 	 * Test each function
